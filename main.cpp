@@ -106,9 +106,9 @@ void zadanie5()
     cout << "min: " << minn;
 }
 
-void szort tablica()
+void zadanie6()
 {
-    short tablica[1000] =
+    short tab[1000] =
     {
         343, 612, 665, 660, 194, -94, 663, 541, 729, 811,
         547, 545, 613, 211, 698, 547, 571, 736, 649, 247,
@@ -152,10 +152,56 @@ void szort tablica()
         455, 771, 238, 133, 516, 799, 410, 341, 355, 470,
         593, 718, 239, 655, 689, 844, 848, 219, 140, 809,
         547, 404, 440, 665, 798, 344, 366, 177, -55, 207};
+    int maks{tab[0]};
+    int minn{tab[0]};
+    for(int i=0; i<=999; ++i)
+    {
+        if(tab[i] > maks)
+        {
+            maks = tab[i];
+        }
+        if(tab[i] < minn)
+        {
+            minn = tab[i];
+        }
+    }
+    cout << "max: " << maks << endl;
+    cout << "min: " << minn;
 }
 
+void zadanie7()
+{
+    ifstream plik("zadanie7.txt");
+    if(!plik.is_open())
+    {
+        cout << "nie dziala";
+    }
+    else
+    {
+        int tab[10'000];
+        for(int i=0; i<10'000; ++i)
+        {
+            plik >> tab[i];
+        }
+        int maks{tab[0]};
+        int minn{tab[0]};
+        for(int i=0; i<10'000; ++i)
+        {
+            if(tab[i] > maks)
+            {
+                maks = tab[i];
+            }
+            if(tab[i] < minn)
+            {
+                minn = tab[i];
+            }
+    }
+    cout << "max: " << maks << endl;
+    cout << "min: " << minn;
+    }
+}
 int main()
 {
-    zadanie5();
+    zadanie7();
     return 0;
 }
